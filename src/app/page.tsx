@@ -1,103 +1,71 @@
-import Image from "next/image";
+'use client';
+
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import styles from './styles/portfolio.module.css';
+
+const FINAL_NAME = 'SRISTI MITRA';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [typedText, setTypedText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    if (currentIndex < FINAL_NAME.length) {
+      timeout = setTimeout(() => {
+        setTypedText(prev => prev + FINAL_NAME[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 100); // faster typing
+    } else {
+      timeout = setTimeout(() => {
+        setTypedText('');
+        setCurrentIndex(0);
+      }, 2000);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [currentIndex]);
+
+  return (
+    <main className={styles.cyberBg}>
+      <div className={styles.lockWrapper}>
+        {/* Animated Typing Text */}
+        <span className={styles.typingText}>
+          {typedText.split('').map((char, i) => {
+            const isWordStart = i === 0 || typedText[i - 1] === ' ';
+            return (
+              <span
+                key={i}
+                className={isWordStart ? styles.bigLetter : styles.smallLetter}
+              >
+                {char}
+              </span>
+            );
+          })}
+        </span>
+
+        {/* Rotating Connectors */}
+        <div className={styles.outerConnector} style={{ transform: 'rotate(0deg)  translateY(-275px)', height: '95px' }}></div>
+        <div className={styles.outerConnector} style={{ transform: 'rotate(60deg)  translateY(-290px)', height: '110px' }}></div>
+        <div className={styles.outerConnector} style={{ transform: 'rotate(180deg)  translateY(-275px)', height: '95px' }}></div>
+        <div className={styles.outerConnector} style={{ transform: 'rotate(240deg)  translateY(-300px)', height: '120px' }}></div>
+        <div className={styles.outerConnector} style={{ transform: 'rotate(120deg) translateY(-290px)', height: '110px' }}></div>
+        <div className={styles.outerConnector} style={{ transform: 'rotate(300deg) translateY(-300px)', height: '120px' }}></div>
+
+        <div className={styles.connector}></div>
+
+        {/* Labels with Links */}
+        <div className={styles.labels}>
+          <Link href="/about" className={styles.label} style={{ top: '-200px', left: '39%', transform: 'translateX(-50%)', animationDelay: '0s' }}>About</Link>
+          <Link href="/education" className={styles.label} style={{ top: '-60px', left: 'calc(50% + 275px)', animationDelay: '0s' }}>Education</Link>
+          <Link href="/project" className={styles.label} style={{ bottom: '-60px', left: 'calc(50% + 275px)', animationDelay: '0s' }}>Project</Link>
+          <Link href="/experience" className={styles.label} style={{ bottom: '-200px', left: '32%', transform: 'translateX(-50%)', animationDelay: '0s' }}>Experience</Link>
+          <Link href="/certificate" className={styles.label} style={{ bottom: '-60px', left: 'calc(50% - 380px)', animationDelay: '0s' }}>Certificate</Link>
+          <Link href="/skills" className={styles.label} style={{ top: '-60px', left: 'calc(50% - 350px)', animationDelay: '0s' }}>Skills</Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </main>
   );
 }

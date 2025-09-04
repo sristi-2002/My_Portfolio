@@ -1,0 +1,153 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d1117;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.laptopFrame {
+  width: 90%;
+  max-width: 900px;
+  height: 600px;
+  background: #1e1e1e;
+  border-radius: 20px;
+  border: 6px solid #00ffcc33;
+  box-shadow: 0 0 30px #00ffcc66;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background: radial-gradient(circle at top left, #0f172a, #111);
+  color: #00ffcc;
+  font-family: 'Fira Code', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing {
+  font-size: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00ffcc;
+  animation: blink 1s steps(1) infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Project card */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffcc22;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  color: #e0f7fa;
+  box-shadow: 0 0 10px #00ffcc44;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 0.8s ease;
+  text-align: center;
+  max-width: 400px;
+}
+
+.cardVisible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card h3 {
+  color: #39ff14;
+  margin-bottom: 0.3rem;
+}
+
+.card p {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.card a {
+  color: #00ffcc;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* All projects */
+.allProjects {
+  text-align: center;
+  animation: fadeInAll 1s ease-in-out forwards;
+}
+
+.finalHeading {
+  font-size: 1.5rem;
+  color: #39ff14;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.gridCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffcc22;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffcc33;
+}
+
+.gridCard h3 {
+  color: #66ff66;
+  margin-bottom: 0.5rem;
+}
+
+.gridCard p {
+  font-size: 0.9rem;
+  color: #e0f7fa;
+  margin-bottom: 0.5rem;
+}
+
+.gridCard a {
+  color: #00ffcc;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@keyframes fadeInAll {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.input {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+  width: 80%;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  outline: none;
+}
+.card {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.cardVisible {
+  opacity: 1;
+}

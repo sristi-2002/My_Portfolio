@@ -1,0 +1,48 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* center stick */
+  align-items: center;
+}
+
+.verticalLine {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100vh;
+  width: 4px;
+  background: black;
+}
+
+.skillRow {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%; /* start from vertical line */
+}
+
+.dottedLine {
+  border-top: 3px dotted black;
+  width: 150px;
+  margin-left: 0;
+  animation: moveDots 2s linear infinite;
+}
+
+.skillText {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Animated dotted effect */
+@keyframes moveDots {
+  from {
+    border-spacing: 0;
+  }
+  to {
+    border-spacing: 10px;
+  }
+}

@@ -1,0 +1,116 @@
+.experience {
+  padding: 2rem;
+  background: linear-gradient(135deg, #000808, #001414);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 245, 212, 0.25);
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #00f5d4;
+  text-shadow: 0 0 15px #00f5d4, 0 0 30px #00e0c2, 0 0 45px #00f5d4;
+}
+
+/* Q&A Intro */
+.qaBox {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00f5d4;
+  text-shadow: 0 0 10px #00f5d4, 0 0 20px #00e0c2;
+  margin-bottom: 0.5rem;
+}
+
+.answer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f5d400;
+  text-shadow: 0 0 10px #f5d400, 0 0 25px #ffd500;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  color: #f5d400;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Timeline */
+.timelineContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timelineItem {
+  background: #001414;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #eee;
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.15);
+}
+
+.timelineItem:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(245, 212, 0, 0.6);
+}
+
+/* Roles & Company */
+.role {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #00f5d4;
+  text-shadow: 0 0 10px #00f5d4, 0 0 20px #00e0c2;
+}
+
+.company {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #f5d400;
+  text-shadow: 0 0 8px #f5d400, 0 0 18px #ffd500;
+}
+
+/* Timeline & List */
+.timeline {
+  font-size: 0.95rem;
+  color: #88cccc;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.ul {
+  padding-left: 1.3rem;
+}
+
+.li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+  color: #fff9d6;
+}
+
+.li:hover {
+  color: #f5d400;
+  text-shadow: 0 0 10px #f5d400, 0 0 20px #ffd500;
+}
+
+/* Type tags */
+.type {
+  color: #00f5d4;
+  font-weight: 600;
+  text-shadow: 0 0 8px #00f5d4;
+}

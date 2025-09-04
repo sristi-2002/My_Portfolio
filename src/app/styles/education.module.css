@@ -1,0 +1,413 @@
+/* Education Container */
+.eduContainer {
+  padding: 4rem 2rem;
+  color: #e0f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Intro Box */
+.introBox {
+  margin-top: 20vh;
+  font-size: 1.8rem;
+  color: #00ffaa;
+  text-align: center;
+  animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: scale(0.9); }
+  20% { opacity: 1; transform: scale(1); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.05); }
+}
+
+.introText {
+  text-shadow: 0 0 10px #00ffaa;
+}
+
+/* Timeline Layout */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.timelineItem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
+}
+
+.timelineItem.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Horizontal layout */
+.centerRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Card in center */
+.card {
+  background: #111;
+  padding: 1.5rem;
+  border: 2px solid #00ffaa66;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ffaa33;
+  text-align: center;
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.card h3 {
+  color: #ffeb3b;
+  margin-bottom: 0.5rem;
+  font-size: 4.5rem;
+  font-weight:500;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin: 0.2rem 0;
+}
+
+/* Horizontal line + circle */
+.horizontalConnector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.line {
+  width: 200px;
+  height: 1px;
+  background-color: #00ffaa;
+}
+
+.linen {
+  width: 250px;
+  height: 1px;
+  background-color: #00ffaa;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background: #00ffaa;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px #00ffaa88;
+}
+
+/* Back Button */
+.backBtn {
+  margin-top: 3rem;
+  color: #aaa;
+  text-decoration: underline;
+  font-size: 14px;
+}
+.leftConnector {
+  flex-direction: row-reverse;
+}
+
+.cardLeft {
+  animation: slideUpFadeIn 0.7s ease forwards;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+@keyframes slideUpFadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timelineItem.show {
+  animation: slideDownFade 0.6s ease forwards;
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 2rem;
+  position: relative;
+}
+.horizontalConnector {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.leftYear {
+  flex-direction: row-reverse;
+  text-align: left;
+}
+
+.rightYear {
+  flex-direction: row;
+  text-align: right;
+}
+/* Update these */
+.eduContainer {
+  padding: 1rem;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.timelineItem {
+  margin: 1rem 0;
+}
+
+.card {
+  padding: 0.8rem;
+  width: 250px;
+}
+
+.card h3 {
+  font-size: 0.8rem;
+  color: "yellow";
+}
+
+.card p {
+  font-size: 0.85rem;
+}
+
+.circle {
+  width: 150px;
+  height: 80px;
+  font-size: 0.7rem;
+}
+.yearLetter {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(-8px);
+  animation: blurIn 0.4s ease forwards;
+}
+
+@keyframes blurIn {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Yellow animated heading letters */
+.bigLetter {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: yellow;
+  opacity: 0;
+  animation: fadeInLetter 0.8s forwards;
+}
+
+.smallLetter {
+  font-size: 0.8rem;
+  color: yellow;
+  opacity: 0;
+  animation: fadeInLetter 0.8s forwards;
+}
+
+/* Default for body text and years */
+/* .letterAnimate {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInLetter 0.8s forwards;
+} */
+/* Animated card text letters */
+.letterAnimate {
+  font-size: 0.8rem;     /* keep readable size */
+  font-weight: bold;     /* 🔥 makes them bold */
+  display: inline-block;
+  animation: fadeInUp 0.5s ease forwards;
+  line-height: 1.6;
+}
+
+/* Keyframes */
+@keyframes fadeInLetter {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes connectLine {
+  0% {
+    width: 0;
+    opacity: 0;
+    box-shadow: 0 0 10px #00ffaa;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 15px #00ffaa;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 5px #00ffaa;
+  }
+}
+
+/* Apply to lines that animate from card to circle */
+.animatedLine {
+  animation: connectLine 1.2s ease-out forwards;
+}
+@keyframes connectLine {
+  0% {
+    width: 0;
+    opacity: 0;
+    filter: blur(6px);
+    box-shadow: 0 0 15px #00ffaa;
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(3px);
+    box-shadow: 0 0 20px #00ffaa;
+  }
+  100% {
+    width: 200px;
+    opacity: 1;
+    filter: blur(0);
+    box-shadow: 0 0 5px #00ffaa;
+  }
+}
+
+.animatedLine {
+  animation: connectLine 1.2s ease-out forwards;
+}
+
+/* For circle glow-in blur effect */
+@keyframes glowCircle {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(10px);
+    box-shadow: 0 0 20px #00ffaa;
+  }
+  60% {
+    opacity: 1;
+    filter: blur(4px);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00ffaa;
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+    box-shadow: 0 0 8px #00ffaa;
+  }
+}
+
+.animatedCircle {
+  animation: glowCircle 1s ease-out forwards;
+}
+.animatedLine,
+.animatedCircle {
+  animation-fill-mode: both;
+}
+@keyframes connectLine {
+  0% {
+    width: 0;
+    opacity: 0;
+    filter: blur(6px);
+    box-shadow: 0 0 15px #00ffaa;
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(3px);
+    box-shadow: 0 0 20px #00ffaa;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+    filter: blur(0);
+    box-shadow: 0 0 5px #00ffaa;
+  }
+}
+
+.animatedLine {
+  animation: connectLine 1.2s ease-out forwards;
+  animation-fill-mode: both;
+}
+
+@keyframes glowCircle {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(10px);
+    box-shadow: 0 0 20px #00ffaa;
+  }
+  60% {
+    opacity: 1;
+    filter: blur(4px);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00ffaa;
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+    box-shadow: 0 0 8px #00ffaa;
+  }
+}
+
+.animatedCircle {
+  animation: glowCircle 1.2s ease-out forwards;
+  animation-fill-mode: both;
+}
+
+.normalText {
+  font-weight: normal !important;
+}
